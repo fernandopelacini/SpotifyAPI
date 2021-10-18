@@ -1,0 +1,23 @@
+﻿ @model IEnumerable<SpotifyAPI.Models.Release>
+
+    @{
+        ViewData["Title"] = "Home Page";
+    }
+
+    <div class="row">
+        @foreach (var item in Model)
+        {
+        <div class="card m-1" style="width:400px;">
+            <div class="card-body">
+                <h5 class="card-title">@Html.DisplayFor(x => item.Artist)</h5>
+                <h6 class="card-subtitle mb-2 text-muted">@Html.DisplayFor(x => item.Name)</h6>
+                <p class="card-text">@Html.DisplayFor(x => item.Date)</p>
+                <img src="@Html.DisplayFor(x => item.ImageUrl)" alt="Album Cover image" width="300px;" height="300px;" />
+
+                <a class="card-footer" href="@Html.DisplayFor(x => item.Link)" target="_blank">Open in Spotify</a>
+                
+            </div>
+        </div>
+        }
+
+    </div>
